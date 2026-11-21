@@ -1,0 +1,99 @@
+:root {
+  color-scheme: light;
+  --navy: #101e35;
+  --navy-light: #213853;
+  --gold: #edc77c;
+  --white: #fff;
+  --muted: #516075;
+  --line: #dce2e9;
+  --pale: #f3f6fa;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--navy); background: var(--white); font: 1rem/1.6 system-ui, sans-serif; }
+a { color: inherit; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #a26a12; outline-offset: 4px; }
+.wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+.skip { position: absolute; top: .5rem; left: .5rem; z-index: 2; padding: .5rem 1rem; background: white; transform: translateY(-160%); }
+.skip:focus { transform: none; }
+.top, .footer { background: var(--navy); color: var(--white); }
+.top { border-bottom: 1px solid #ffffff24; }
+.nav, .foot { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1.65rem; }
+nav a, .foot > a { text-underline-offset: .25em; }
+nav a:not(:hover), .foot > a:not(:hover) { text-decoration: none; }
+.brand { display: inline-flex; align-items: center; font-size: 1.3rem; font-weight: 750; text-decoration: none; letter-spacing: -.035em; }
+.brand span { color: var(--gold); }
+.mark { display: grid; place-items: center; width: 2rem; height: 2rem; margin-right: .55rem; border: 1px solid var(--gold); border-radius: 7px; font: bold 1.2rem Georgia, serif; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .58rem 1.1rem; border: 1px solid transparent; border-radius: 7px; font-weight: 700; text-decoration: none; line-height: 1.35; }
+.gold { background: var(--gold); color: var(--navy); }
+.gold:hover { background: #ffdc97; }
+.outline { border-color: #a6b2c4; color: white; }
+.outline:hover { background: #ffffff17; }
+.dark { background: var(--navy); color: white; }
+.dark:hover { background: var(--navy-light); }
+.hero { overflow: hidden; color: white; background: radial-gradient(ellipse at 85% 55%, #263f61, var(--navy) 65%); }
+.hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; min-height: 490px; padding-block: clamp(3rem, 7vw, 6rem); gap: 1rem; }
+.eyebrow { margin: 0 0 .75rem; font-size: .875rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 750; }
+.hero .eyebrow, h1 em { color: var(--gold); }
+h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 500; letter-spacing: -.04em; line-height: 1.06; }
+h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+.intro { max-width: 46ch; margin: 1.25rem 0 1.6rem; color: #e0e8f4; font-size: 1.1rem; }
+.actions { display: flex; gap: .65rem; flex-wrap: wrap; }
+.art { position: relative; display: grid; place-items: center; min-height: 300px; }
+.orbit { position: absolute; width: min(95%, 330px); aspect-ratio: 1; border: 1px solid #edc77c65; border-radius: 50%; box-shadow: 0 0 0 18px #edc77c0d, 0 0 0 36px #edc77c09; }
+.passport { position: relative; display: grid; place-content: center; justify-items: center; gap: 1.15rem; width: 155px; height: 212px; margin-right: 20px; transform: rotate(-13deg); color: var(--gold); background: linear-gradient(150deg, #304e72, #101e35); border: 1px solid #edc77c90; border-radius: 8px 14px 14px 8px; box-shadow: 8px 5px 0 #e1cda7, 22px 22px 35px #080e1e80; font: 1.1rem Georgia, serif; }
+.globe { display: grid; place-items: center; width: 66px; height: 66px; border: 1px solid; border-radius: 50%; position: relative; }
+.globe i { height: 100%; width: 50%; border: 1px solid; border-radius: 50%; }
+.globe b { position: absolute; width: 94%; height: 34%; border-block: 1px solid; }
+.section { padding-block: clamp(3rem, 6.5vw, 5.5rem); }
+.lead { color: var(--muted); margin: .65rem 0 1.75rem; }
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.card { display: flex; flex-direction: column; align-items: start; gap: .7rem; padding: clamp(1.05rem, 3vw, 1.6rem); border: 1px solid var(--line); border-radius: 12px; }
+.card h3, .card p, .card ul { margin: 0; }
+.card h3 { font-size: 1.25rem; line-height: 1.25; }
+.card p:not(.price, .eyebrow), .card li { color: var(--muted); }
+.card .price { font-size: 1.55rem; font-weight: 750; }
+.price small { font-size: .85rem; }
+.card a { margin-top: auto; font-weight: 700; text-underline-offset: .25em; }
+.featured { grid-row: span 2; background: #edf2f8; border-top: 4px solid #ba8740; }
+.featured .eyebrow { color: #73501f; margin-bottom: .45rem; }
+.featured ul { padding-left: 1.1rem; }
+.featured li + li { margin-top: .35rem; }
+.featured .button { margin-top: 1rem; }
+.faq-band { background: var(--pale); }
+.faq-grid, .notice { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; }
+.questions { border-top: 1px solid #cbd5e2; }
+details { border-bottom: 1px solid #cbd5e2; }
+summary { cursor: pointer; font-weight: 700; padding: .95rem 0; }
+details p { margin: 0 0 1rem; color: var(--muted); }
+.notice { grid-template-columns: 1fr 1fr; border-left: 3px solid #ba8740; padding-left: 1.4rem; }
+.notice h2 { font: 750 1.2rem/1.25 system-ui, sans-serif; letter-spacing: 0; }
+.notice p { margin: .55rem 0 0; color: var(--muted); }
+.foot { padding-block: 1.25rem; flex-wrap: wrap; }
+@media (max-width: 850px) {
+  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured { grid-column: 1 / -1; grid-row: auto; }
+}
+@media (max-width: 640px) {
+  .wrap { width: calc(100% - 2rem); }
+  .nav { flex-wrap: wrap; padding-block: .65rem; }
+  nav { order: 1; width: 100%; padding-bottom: .35rem; font-size: .925rem; }
+  .hero-grid, .faq-grid, .notice { grid-template-columns: 1fr; }
+  .hero-grid { padding-bottom: 2rem; }
+  .art { min-height: 230px; }
+  .orbit { width: 170px; }
+  .passport { width: 112px; height: 149px; gap: .5rem; font-size: .9rem; }
+  .globe { width: 43px; height: 43px; }
+  .faq-grid .lead { margin-bottom: 0; }
+}
+@media (max-width: 480px) {
+  .services { grid-template-columns: 1fr; }
+  .actions .button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+.brand-caption { margin-left: .5rem; max-width: 9ch; font-size: .7rem; line-height: 1.1; letter-spacing: 0; }
+@media (max-width: 360px) { .brand-caption { display: none; } }
