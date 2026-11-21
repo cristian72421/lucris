@@ -97,3 +97,31 @@ details p { margin: 0 0 1rem; color: var(--muted); }
 }
 .brand-caption { margin-left: .5rem; max-width: 9ch; font-size: .7rem; line-height: 1.1; letter-spacing: 0; }
 @media (max-width: 360px) { .brand-caption { display: none; } }
+
+.process { padding-top: 0; }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+.steps > li { counter-increment: step; }
+.steps > li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--gold);
+  font-weight: 750;
+}
+.about-band { background: var(--navy); color: var(--white); }
+.about { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; align-items: start; }
+.about p { max-width: 60ch; margin: 0; color: #e0e8f4; }
+@media (max-width: 640px) {
+  .steps, .about { grid-template-columns: 1fr; }
+}
